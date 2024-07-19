@@ -1,0 +1,22 @@
+name: escrito-2-martin-lorenzo
+
+services:
+  db:
+    build:
+      context: ./mysql-db
+    container_name: escrito-2-martin-lorenzo-db
+
+    # restart: on-failure
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "1891"
+      TZ: America/Montevideo
+    volumes:
+      - ./db.sql:/docker-entrypoint-initdb.d/start.sql
+      - escrito-2-martin-lorenzo-db-volume:/var/lib/mysql
+
+
+volumes:
+  escrito-2-martin-lorenzo-db-volume: {}
+  

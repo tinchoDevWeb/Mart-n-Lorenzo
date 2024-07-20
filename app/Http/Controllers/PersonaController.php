@@ -9,6 +9,7 @@ class PersonaController extends Controller
 {
     public function alta(Request $request)
     {
+
         $persona = new Persona();
         $persona->nombre = $request->nombre;
         $persona->apellido = $request->apellido;
@@ -17,5 +18,5 @@ class PersonaController extends Controller
         return response()->setStatusCode(201);
     }
     
-    
+
 }

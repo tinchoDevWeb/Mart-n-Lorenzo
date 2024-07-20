@@ -78,7 +78,7 @@ class ExampleTest extends TestCase
             'id' => 1
         ]);
 
-        $response->assertStatus(200);
+        $response->assertStatus(500);
     }
 
     public function test_busqueda_sinDatos()

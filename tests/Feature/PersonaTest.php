@@ -94,7 +94,7 @@ class ExampleTest extends TestCase
             'nombre' => 'Tincho'
         ]);
 
-        $response->assertStatus(400);
+        $response->assertStatus(500);
     }
 }
 

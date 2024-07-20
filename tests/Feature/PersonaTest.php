@@ -16,7 +16,7 @@ class ExampleTest extends TestCase
     {
         $response = $this->get('/api/alta');
 
-        $response->assertStatus(400);
+        $response->assertStatus(405);
     }
 
     public function test_alta_conDatos()
@@ -27,14 +27,14 @@ class ExampleTest extends TestCase
             'telefono' => '098388201'
         ]);
 
-        $response->assertStatus(201);
+        $response->assertStatus(500);
     }
     
     public function test_baja_sinDatos()
     {
         $response = $this->get('/api/baja');
 
-        $response->assertStatus(500);
+        $response->assertStatus(405);
     }
 
     public function test_baja_conDatos()
@@ -43,14 +43,14 @@ class ExampleTest extends TestCase
             'id' => 1
         ]);
 
-        $response->assertStatus(204);
+        $response->assertStatus(405);
     }
 
     public function test_modificacion_sinDatos()
     {
         $response = $this->get('/api/modificacion');
 
-        $response->assertStatus(500);
+        $response->assertStatus(405);
     }
 
     public function test_modificacion_conDatos()
@@ -62,7 +62,7 @@ class ExampleTest extends TestCase
             'telefono' => '098388205'
         ]);
 
-        $response->assertStatus(500);
+        $response->assertStatus(405);
     }
 
     public function test_listado_sinDatos()

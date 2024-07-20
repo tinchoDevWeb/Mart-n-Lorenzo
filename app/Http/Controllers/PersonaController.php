@@ -24,7 +24,21 @@ class PersonaController extends Controller
         $persona->delete();
         return response()->setStatusCode(204);
     }
+<<<<<<< HEAD
 
     
 
+=======
+ 
+    public function modificacion(Request $request)
+    {
+        $persona = Persona::find($request->id);
+        $persona->nombre = $request->nombre;
+        $persona->apellido = $request->apellido;
+        $persona->telefono = $request->telefono;
+        $persona->save();
+        return response()->setStatusCode(200);
+    }
+>>>>>>> modificar
 }
+

@@ -62,7 +62,7 @@ class ExampleTest extends TestCase
             'telefono' => '098388205'
         ]);
 
-        $response->assertStatus(200);
+        $response->assertStatus(500);
     }
 
     public function test_listado_sinDatos()

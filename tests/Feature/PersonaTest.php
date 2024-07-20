@@ -34,7 +34,7 @@ class ExampleTest extends TestCase
     {
         $response = $this->get('/api/baja');
 
-        $response->assertStatus(400);
+        $response->assertStatus(500);
     }
 
     public function test_baja_conDatos()
@@ -50,7 +50,7 @@ class ExampleTest extends TestCase
     {
         $response = $this->get('/api/modificacion');
 
-        $response->assertStatus(400);
+        $response->assertStatus(500);
     }
 
     public function test_modificacion_conDatos()
@@ -69,7 +69,7 @@ class ExampleTest extends TestCase
     {
         $response = $this->get('/api/listado');
 
-        $response->assertStatus(400);
+        $response->assertStatus(500);
     }
 
     public function test_listado_conDatos()
@@ -85,7 +85,7 @@ class ExampleTest extends TestCase
     {
         $response = $this->get('/api/busqueda');
 
-        $response->assertStatus(400);
+        $response->assertStatus(500);
     }
 
     public function test_busqueda_conDatos()

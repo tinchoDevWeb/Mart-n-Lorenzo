@@ -16,5 +16,6 @@ Route::prefix('persona')->group(function (){
   Route::delete('/baja', [PersonaController::class, 'baja']);
   Route::put('/modificacion', [PersonaController::class, 'modificacion']);
   Route::get('/listado', [PersonaController::class, 'listado']);
+  Route::get('/busqueda', [PersonaController::class, 'busqueda']);
 ;
 >>>>>>> listado

@@ -34,5 +34,12 @@ class PersonaController extends Controller
         $persona->save();
         return response()->setStatusCode(200);
     }
+    
+    public function listado(Request $request){
+        if($request->has('id')){
+            return Persona::find($request->id);
+    }
+}
+
 }
 

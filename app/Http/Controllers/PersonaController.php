@@ -39,6 +39,19 @@ class PersonaController extends Controller
         if($request->has('id')){
             return Persona::find($request->id);
     }
+
+    }
+    public function busqueda(Request $request){
+
+        if($request->has('nombre')){
+            return Persona::where('nombre', 'like', '%'.$request->nombre.'%')->get();
+        }
+        if($request->has('apellido')){
+            return Persona::where('apellido', 'like', '%'.$request->apellido.'%')->get();
+        }
+        if($request->has('telefono')){
+            return Persona::where('telefono', 'like', '%'.$request->telefono.'%')->get();
+        }
 }
 
 }

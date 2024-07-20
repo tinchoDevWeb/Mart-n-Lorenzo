@@ -24,11 +24,6 @@ class PersonaController extends Controller
         $persona->delete();
         return response()->setStatusCode(204);
     }
-<<<<<<< HEAD
-
-    
-
-=======
  
     public function modificacion(Request $request)
     {
@@ -39,29 +34,17 @@ class PersonaController extends Controller
         $persona->save();
         return response()->setStatusCode(200);
     }
-<<<<<<< HEAD
->>>>>>> modificar
-=======
-    
-    public function listado(Request $request){
-        if($request->has('id')){
-            return Persona::find($request->id);
+
+    public function listado()
+    {
+        $personas = Persona::all();
+        return response()->json($personas);
     }
 
+    public function busqueda(Request $request)
+    {
+        $personas = Persona::where('nombre', 'like', '%' . $request->nombre . '%')->get();
+        return response()->json($personas);
     }
-    public function busqueda(Request $request){
-
-        if($request->has('nombre')){
-            return Persona::where('nombre', 'like', '%'.$request->nombre.'%')->get();
-        }
-        if($request->has('apellido')){
-            return Persona::where('apellido', 'like', '%'.$request->apellido.'%')->get();
-        }
-        if($request->has('telefono')){
-            return Persona::where('telefono', 'like', '%'.$request->telefono.'%')->get();
-        }
-}
-
->>>>>>> listado
 }
 

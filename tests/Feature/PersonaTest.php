@@ -15,6 +15,7 @@ class ExampleTest extends TestCase
     public function test_alta_sinDatos()
     {
         $response = $this->get('/api/alta');
+
         $response->assertStatus(400);
     }
 
